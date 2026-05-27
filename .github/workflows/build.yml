@@ -58,5 +58,3 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$COMMIT
           docker push $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$COMMIT
-
-Secret to delete paste: 00h032micWj0RR18
