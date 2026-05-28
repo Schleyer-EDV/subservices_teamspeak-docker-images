@@ -20,7 +20,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.PAT_TOKEN }}
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
@@ -49,5 +49,5 @@ jobs:
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${{ github.repository_owner }}/ts_agent/dispatches \
+            https://api.github.com/repos/${{ github.repository_owner }}/tsagent/dispatches \
             -d '{"event_type":"rebuild"}'
